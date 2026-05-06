@@ -1,6 +1,7 @@
 package io.github.brainstormsys.paperutils;
 
 import com.destroystokyo.paper.event.player.PlayerLaunchProjectileEvent;
+import io.github.brainstormsys.paperutils.configs.JailData;
 import io.papermc.paper.datacomponent.DataComponentTypes;
 import net.kyori.adventure.key.Key;
 import net.kyori.adventure.text.Component;

@@ -1,6 +1,6 @@
-package io.github.brainstormsys.paperutils;
+package io.github.brainstormsys.paperutils.items;
 
-import dev.jorel.commandapi.CommandAPICommand;
+import io.github.brainstormsys.paperutils.PaperUtils;
 import io.papermc.paper.datacomponent.DataComponentTypes;
 import io.papermc.paper.datacomponent.item.Consumable;
 import io.papermc.paper.datacomponent.item.FoodProperties;
@@ -10,22 +10,12 @@ import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.text.minimessage.MiniMessage;
-import net.kyori.adventure.title.Title;
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
-import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.inventory.FurnaceExtractEvent;
-import org.bukkit.event.inventory.FurnaceSmeltEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.plugin.java.JavaPlugin;
 
-import javax.naming.Name;
-import java.util.HashSet;
 import java.util.List;
-import java.util.UUID;
 
 public class CrystalMeth implements Listener {
     public CrystalMeth(PaperUtils plugin) {

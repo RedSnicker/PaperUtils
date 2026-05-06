@@ -1,7 +1,10 @@
-package io.github.brainstormsys.paperutils;
+package io.github.brainstormsys.paperutils.commands;
 
 import dev.jorel.commandapi.CommandAPICommand;
 import dev.jorel.commandapi.arguments.EntitySelectorArgument;
+import io.github.brainstormsys.paperutils.configs.CustomConfig;
+import io.github.brainstormsys.paperutils.configs.JailData;
+import io.github.brainstormsys.paperutils.PaperUtils;
 import org.bukkit.Location;
 import org.bukkit.Particle;
 import org.bukkit.Sound;

@@ -2,31 +2,30 @@ package io.github.brainstormsys.paperutils;
 
 import dev.jorel.commandapi.CommandAPI;
 import dev.jorel.commandapi.CommandAPIPaperConfig;
+import io.github.brainstormsys.paperutils.commands.FartCommand;
+import io.github.brainstormsys.paperutils.commands.JailCommand;
+import io.github.brainstormsys.paperutils.commands.SpawnCommand;
+import io.github.brainstormsys.paperutils.configs.CustomConfig;
+import io.github.brainstormsys.paperutils.customrecipes.Recipes;
+import io.github.brainstormsys.paperutils.items.*;
 import io.papermc.paper.datacomponent.DataComponentTypes;
 import net.kyori.adventure.key.Key;
-import net.kyori.adventure.resource.ResourcePackInfo;
-import net.kyori.adventure.resource.ResourcePackInfoLike;
-import net.kyori.adventure.resource.ResourcePackRequest;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.title.Title;
 import org.bukkit.*;
-import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
-import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.*;
 import org.bukkit.inventory.*;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-import org.bukkit.scheduler.BukkitRunnable;
 
-import java.net.URI;
 import java.time.Duration;
 import java.util.*;
 
@@ -60,7 +59,9 @@ public final class PaperUtils extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(new JailWandItem(this), this);
         getServer().getPluginManager().registerEvents(new CrystalMeth(this), this);
         getServer().getPluginManager().registerEvents(new EnderiteLogic(this), this);
-        BurgerLogic.registerRecipe();
+        Recipes.registerRecipe();
+        getServer().getPluginManager().registerEvents(new EnderiteLogic(this), this);
+        EnderiteLogic.startWaterDamageTaskshi();
         registerRecipies();
 
         getLogger().info("ForceResourcePack enabled!");
@@ -352,7 +353,7 @@ public final class PaperUtils extends JavaPlugin implements Listener {
 
         if(e.getItem().getItemMeta()  == null ) return;
 
-        if(!BurgerLogic.SUSHI_KEY.equals(e.getItem().getItemMeta().getItemModel())) return;
+        if(!Recipes.SUSHI_KEY.equals(e.getItem().getItemMeta().getItemModel())) return;
 
         player.addPotionEffect(new PotionEffect(PotionEffectType.WATER_BREATHING, 200, 0));
 

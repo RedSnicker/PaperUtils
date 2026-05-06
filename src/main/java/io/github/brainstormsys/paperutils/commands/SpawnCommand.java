@@ -1,6 +1,7 @@
-package io.github.brainstormsys.paperutils;
+package io.github.brainstormsys.paperutils.commands;
 
 import dev.jorel.commandapi.CommandAPICommand;
+import io.github.brainstormsys.paperutils.PaperUtils;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Bukkit;

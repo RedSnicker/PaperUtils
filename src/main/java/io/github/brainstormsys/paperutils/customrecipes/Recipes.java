@@ -1,5 +1,7 @@
-package io.github.brainstormsys.paperutils;
+package io.github.brainstormsys.paperutils.customrecipes;
 
+import io.github.brainstormsys.paperutils.PaperUtils;
+import io.github.brainstormsys.paperutils.items.EnderiteLogic;
 import io.papermc.paper.datacomponent.DataComponentTypes;
 import io.papermc.paper.datacomponent.item.FoodProperties;
 import net.kyori.adventure.key.Key;
@@ -7,22 +9,16 @@ import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
-import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.RecipeChoice;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
 
-import javax.naming.Name;
 import java.awt.print.Paper;
 import java.util.List;
 
-public class BurgerLogic implements Listener {
+public class Recipes implements Listener {
 
     public static final Key BURGER_KEY = Key.key("arbiters_crossbow", "burger");
     public static final Key SUSHI_KEY = Key.key("arbiters_crossbow", "sushi");
@@ -156,6 +152,21 @@ public class BurgerLogic implements Listener {
         recipe4.setIngredient('H', Material.NETHERITE_HELMET);
         recipe4.setIngredient('E', Material.ENDER_EYE);
         PaperUtils.getInstance().getServer().addRecipe(recipe4);
+
+        // chestplate
+
+        NamespacedKey key5 = new NamespacedKey(PaperUtils.getInstance(), "chestplate");
+        ShapedRecipe recipe5 = new ShapedRecipe(key5, EnderiteLogic.getChestplate());
+
+        recipe5.shape(
+                " E ",
+                " C ",
+                " P "
+        );
+        recipe5.setIngredient('E', new RecipeChoice.ExactChoice(EnderiteLogic.getEnderite()));
+        recipe5.setIngredient('C', Material.NETHERITE_CHESTPLATE);
+        recipe5.setIngredient('P', Material.ENDER_EYE);
+        PaperUtils.getInstance().getServer().addRecipe(recipe5);
 
     }
 

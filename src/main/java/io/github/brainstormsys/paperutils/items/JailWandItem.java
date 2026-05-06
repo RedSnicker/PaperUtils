@@ -1,6 +1,8 @@
-package io.github.brainstormsys.paperutils;
+package io.github.brainstormsys.paperutils.items;
 
 import dev.jorel.commandapi.CommandAPICommand;
+import io.github.brainstormsys.paperutils.configs.CustomConfig;
+import io.github.brainstormsys.paperutils.PaperUtils;
 import io.papermc.paper.datacomponent.DataComponentTypes;
 import net.kyori.adventure.key.Key;
 import net.kyori.adventure.text.Component;
